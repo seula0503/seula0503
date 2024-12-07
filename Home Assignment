@@ -1,1 +1,74 @@
+SELECT * FROM rectangles;
 
+SELECT COUNT(*) AS TotalRectangles FROM rectangles;
+
+SELECT color&nbsp;
+FROM rectangles&nbsp;
+ORDER BY width DESC&nbsp;
+LIMIT 1;
+
+SELECT color&nbsp;
+FROM rectangles&nbsp;
+ORDER BY height DESC&nbsp;
+LIMIT 1;
+
+SELECT *&nbsp;
+FROM rectangles&nbsp;
+WHERE width &gt; height;
+
+SELECT id, width, height, (width * height) AS Area&nbsp;
+FROM rectangles;
+
+SELECT color&nbsp;
+FROM rectangles&nbsp;
+ORDER BY (width * height) DESC&nbsp;
+LIMIT 1;
+
+SELECT color&nbsp;
+FROM rectangles&nbsp;
+ORDER BY (x + width) DESC&nbsp;
+LIMIT 1;
+
+SELECT color&nbsp;
+FROM rectangles&nbsp;
+ORDER BY (x + width) DESC&nbsp;
+LIMIT 1;
+
+SELECT *&nbsp;
+FROM rectangles&nbsp;
+WHERE color IS NULL;
+
+SELECT DISTINCT color&nbsp;
+FROM rectangles;
+
+SELECT DISTINCT color&nbsp;
+FROM rectangles&nbsp;
+WHERE color IS NOT NULL&nbsp;
+&nbsp; AND color NOT LIKE '#%';
+
+SELECT UPPER(color) AS UpperCaseColor&nbsp;
+FROM rectangles;
+
+SELECT course_id&nbsp;
+FROM courses&nbsp;
+ORDER BY LENGTH(course_name) DESC&nbsp;
+LIMIT 1;
+
+SELECT COUNT(*) AS AssignmentsIn2024&nbsp;
+FROM assignments&nbsp;
+WHERE YEAR(due_date) = 2024;
+
+SELECT CONCAT(course_id, ': ', course_name) AS CourseDetails&nbsp;
+FROM courses;
+
+SELECT course_id, course_name, lab_time&nbsp;
+FROM courses&nbsp;
+WHERE lab_time LIKE 'Monday%';
+
+SELECT *&nbsp;
+FROM assignments&nbsp;
+WHERE due_date &lt; CURDATE();
+
+SELECT course_id, COUNT(*) AS AssignmentCount&nbsp;
+FROM assignments&nbsp;
+GROUP BY course_id;
